@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """"module hello_route"""
 from flask import Flask
-from str import isnumeric
 
 app = Flask(__name__)
 
@@ -40,19 +39,19 @@ def display_python(text="is cool"):
     return "Python " + text
 
 
-@app.route('/number/<n>', strict_slashes=False)
+@app.route('/number/<int:n>', strict_slashes=False)
 def number(n):
     """
     Displays a message indicating whether the input value is a number or not.
 
     Args:
-        n (str): The input value to be checked.
+        n (int): The input value to be checked.
 
     Returns:
         str: A message indicating whether the input value is a number or not.
     """
-    if n.isnumeric():
-        return n + " is a number"
+    if isinstance(n, int):
+        return f"{n} is a number"
 
 
 if __name__ == '__main__':
