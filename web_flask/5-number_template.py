@@ -1,6 +1,6 @@
-
 #!/usr/bin/python3
 """"module hello_route"""
+
 from flask import Flask, render_template
 
 app = Flask(__name__)
@@ -57,7 +57,8 @@ def number(n):
 @app.route('/number_template/<int:n>', strict_slashes=False)
 def number_template(n):
     """
-    Renders a template called '5-number_template.html' and passes the value of 'n' to it.
+    Renders a template called '5-number_template.html' and
+    passes the value of 'n' to it.
 
     Args:
         n (int): The number to be passed to the template.
