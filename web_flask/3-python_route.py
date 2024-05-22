@@ -31,13 +31,12 @@ def display_c(text):
 
 
 @app.route('/python/<text>', strict_slashes=False)
-def display_python(text):
+def display_python(text="is cool"):
     """
     Displays "Python " followed by the value of the text variable.
     """
     text = text.replace('_', ' ')
     return "Python " + text
-
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
